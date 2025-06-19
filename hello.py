@@ -26,6 +26,7 @@ if prompt := st.chat_input("What is up?"):
 
     with st.chat_message("assistant"):
         response = ""
+        partial_display = ""
         stream = openai.chat.completions.create(
             model=st.session_state["openai_model"],
             messages=[
@@ -36,10 +37,13 @@ if prompt := st.chat_input("What is up?"):
         )
 
         for chunk in stream:
-            if chunk.choices[0].delta and hasattr(chunk.choices[0].delta, "content"):
-                content = chunk.choices[0].delta.content
+            delta = chunk.choices[0].delta
+            if hasattr(delta, "content") and delta.content:
+                content = delta.content
                 response += content
-                st.markdown(response + "▌")
+                partial_display += content
+                st.markdown(partial_display + "▌")
+
         st.markdown(response)
 
     st.session_state.messages.append({"role": "assistant", "content": response})
