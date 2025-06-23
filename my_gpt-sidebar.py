@@ -73,7 +73,7 @@ if prompt := st.chat_input("메시지를 입력하세요."):
 
 with center_col:
     # ✅ 여백 추가: 화면 아래쪽으로 내리기
-    st.markdown("<div style='height: 700px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 800px;'></div>", unsafe_allow_html=True)
 
     st.title("ChatGPT-like clone")
 
