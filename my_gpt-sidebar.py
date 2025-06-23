@@ -42,6 +42,9 @@ with st.sidebar:
 left_col, center_col, right_col = st.columns([1, 2, 1])
 
 with center_col:
+    # 현재 대화 불러오기
+    messages = st.session_state["conversations"][st.session_state["current_conversation"]]
+
     # 🔧 CSS로 수직 정렬
     st.markdown("""
         <style>
@@ -104,10 +107,7 @@ with center_col:
         st.markdown('</div>', unsafe_allow_html=True)
 
     st.title("나만의 ChatGPT")
-
-    # 현재 대화 불러오기
-    messages = st.session_state["conversations"][st.session_state["current_conversation"]]
-
+    
     # 💬 이전 메시지 출력
     for message in messages:
         with st.chat_message(message["role"]):
