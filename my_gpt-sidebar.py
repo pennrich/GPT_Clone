@@ -43,7 +43,7 @@ left_col, center_col, right_col = st.columns([1, 2, 1])
 
 with center_col:
     # ✅ 여백 추가: 화면 아래쪽으로 내리기
-    st.markdown("<div style='height: 300px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 500px;'></div>", unsafe_allow_html=True)
 
     st.title("ChatGPT-like clone")
 
