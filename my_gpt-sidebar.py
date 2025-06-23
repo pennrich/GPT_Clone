@@ -52,4 +52,4 @@ with center_col:
 
     # 💬 이전 메시지 출력
     for message in messages:
-        with st.chat_message(message["role"])_
+        with st.chat_message(message["role"])
