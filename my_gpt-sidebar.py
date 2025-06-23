@@ -3,7 +3,7 @@ import streamlit as st
 from datetime import datetime
 
 # 페이지 설정
-st.set_page_config(page_title="ChatGPT Clone", layout="wide")
+st.set_page_config(page_title="나만의 ChatGPT", layout="wide")
 
 # 💾 API 키 로드
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
@@ -54,9 +54,9 @@ with center_col:
     """, unsafe_allow_html=True)
 
     # 여백
-    st.markdown("<div style='height: 100px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 300px;'></div>", unsafe_allow_html=True)
 
-    st.title("ChatGPT-like clone")
+    st.title("나만의 ChatGPT")
 
     # 현재 대화 불러오기
     messages = st.session_state["conversations"][st.session_state["current_conversation"]]
