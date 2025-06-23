@@ -42,6 +42,9 @@ with st.sidebar:
 left_col, center_col, right_col = st.columns([1, 2, 1])
 
 with center_col:
+    # ✅ 여백 추가: 화면 아래쪽으로 내리기
+    st.markdown("<div style='height: 150px;'></div>", unsafe_allow_html=True)
+
     st.title("ChatGPT-like clone")
 
     # 현재 대화 불러오기
@@ -49,38 +52,4 @@ with center_col:
 
     # 💬 이전 메시지 출력
     for message in messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-
-    # 📥 사용자 입력
-    if prompt := st.chat_input("메시지를 입력하세요."):
-        messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        # 🤖 어시스턴트 응답
-        with st.chat_message("assistant"):
-            try:
-                stream = client.chat.completions.create(
-                    model=st.session_state["openai_model"],
-                    messages=[{"role": m["role"], "content": m["content"]} for m in messages],
-                    stream=True,
-                )
-
-                full_response = ""
-                placeholder = st.empty()
-
-                for chunk in stream:
-                    content = getattr(chunk.choices[0].delta, "content", None)
-                    if content:
-                        full_response += content
-                        placeholder.markdown(full_response)
-
-                messages.append({"role": "assistant", "content": full_response})
-
-            except RateLimitError:
-                st.error("⚠️ 요청이 너무 많습니다. 잠시 후 다시 시도해 주세요.")
-            except Exception as e:
-                st.error(f"❌ 오류 발생: {e}")
-
-
+        with st.chat_message(message["role"])_
