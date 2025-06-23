@@ -2,8 +2,8 @@ from openai import OpenAI, RateLimitError
 import streamlit as st
 from datetime import datetime
 
-st.set_page_config(page_title="ChatGPT Clone", layout="wide")
-st.title("ChatGPT-like clone")
+st.set_page_config(page_title="나만의 ChatGPT", layout="wide")
+st.title("나만의 ChatGPT")
 
 # API 키 로드
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
