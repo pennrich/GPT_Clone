@@ -42,7 +42,6 @@ with st.sidebar:
 left_col, center_col, right_col = st.columns([1, 2, 1])
 
 with center_col:
-    with center_col:
     # 🔧 CSS로 수직 정렬
     st.markdown("""
         <style>
