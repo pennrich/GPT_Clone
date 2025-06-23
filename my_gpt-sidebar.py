@@ -49,7 +49,6 @@ with center_col:
             width: 400px !important;
             height: 200px !important;  
             margin: auto !important;
-            resize: none;
         }
         </style>
     """, unsafe_allow_html=True)
