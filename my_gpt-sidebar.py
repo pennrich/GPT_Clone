@@ -54,7 +54,7 @@ with center_col:
     """, unsafe_allow_html=True)
 
     # 여백
-    st.markdown("<div style='height: 600px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 800px;'></div>", unsafe_allow_html=True)
 
     st.title("나만의 ChatGPT")
 
