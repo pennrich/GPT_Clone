@@ -47,6 +47,7 @@ with center_col:
         <style>
         textarea[data-testid="stChatInput"] {
             width: 400px !important;
+            height: 100px !important;  
             margin: auto !important;
             resize: none;
         }
