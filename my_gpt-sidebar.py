@@ -47,7 +47,7 @@ with center_col:
         <style>
         textarea[data-testid="stChatInput"] {
             width: 400px !important;
-            height: 100px !important;  /* ✅ 이 줄 추가 */
+            height: 200px !important;  /* ✅ 이 줄 추가 */
             margin: auto !important;
         }
         </style>
